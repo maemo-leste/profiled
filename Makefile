@@ -136,7 +136,7 @@ debclean:: distclean
 mostlyclean::
 	$(RM) *.o *~
 
-install:: $(addprefix install-,profiled profileclient libprofile libprofile-dev libprofile-doc)
+install:: $(addprefix install-,profiled profileclient libprofile libprofile-dev libprofile-doc profile-data profile-data-dev)
 
 .PHONY: dox
 dox:
@@ -376,6 +376,27 @@ install-libprofile-doc-man:
 	install -m644 $(DOXYDIR)/man/man3/* $(ROOT)$(MANDIR)/man3/
 
 install-libprofile-doc:: $(addprefix install-libprofile-doc-, html man)
+
+# ----------------------------------------------------------------------------
+# profile-data.deb
+# ----------------------------------------------------------------------------
+
+install-profile-data: ini/90.nokia.ini
+	install -m755 -d $(ROOT)$(ETCDIR)
+	install -m644 ini/90.nokia.ini $(ROOT)$(ETCDIR)/90.nokia.ini
+
+# ----------------------------------------------------------------------------
+# profile-data-dev.deb
+# ----------------------------------------------------------------------------
+
+install-profile-data-dev: keys_nokia.h profile-data.pc
+	install -m755 -d $(ROOT)$(INCDIR)
+	install -m755 -d $(ROOT)$(PKGCFGDIR)
+	install -m644 keys_nokia.h $(ROOT)$(INCDIR)/keys_nokia.h
+	install -m644 profile-data.pc $(ROOT)$(PKGCFGDIR)/profile-data.pc
+
+clean::
+	$(RM) profile-data.pc
 
 # ----------------------------------------------------------------------------
 # Dependency Scanning

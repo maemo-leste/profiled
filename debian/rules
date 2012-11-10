@@ -58,6 +58,8 @@ install: build
 	$(MAKE) install-libprofile-dev ROOT=debian/libprofile-dev
 	$(MAKE) install-libprofile-doc ROOT=debian/libprofile-doc
 	$(MAKE) install-profileclient  ROOT=debian/profileclient
+	$(MAKE) install-profile-data   ROOT=debian/profile-data
+	$(MAKE) install-profile-data-dev ROOT=debian/profile-data-dev
 
 #----------------------------------------------------------------
 # architecture-independent files -> DEBIAN dirs

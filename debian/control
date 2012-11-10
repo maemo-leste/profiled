@@ -80,3 +80,16 @@ Description: API documentation for libprofile0
  Doxygen generated files documenting the C language API used by
  the client applications and the D-Bus API used by libprofile0
  for communication with profiled.
+
+Package: profile-data
+Architecture: all
+Description: configuration data for the profile daemon
+ Contains default values for profile keys from
+ product UI specifications.
+
+Package: profile-data-dev
+Section: libdevel
+Architecture: all
+Depends: profile-data (= ${binary:Version})
+Description: development files for profile-data
+ Include file for C language defining profile key names.
