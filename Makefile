@@ -173,14 +173,6 @@ install-%-backup-restore:
 	$(if $<, install -m755 -d $(ROOT)$(BACKUP_DIR)/restore.d/always)
 	$(if $<, install -m755 $^ $(ROOT)$(BACKUP_DIR)/restore.d/always)
 
-install-%-backupfw-config:
-	$(if $<, install -m755 -d $(ROOT)$(BACKUPFW_DIR)/applications)
-	$(if $<, install -m644 $^ $(ROOT)$(BACKUPFW_DIR)/applications)
-
-install-%-backupfw-restore:
-	$(if $<, install -m755 -d $(ROOT)$(BACKUPFW_DIR)/restore.d/always)
-	$(if $<, install -m755 $^ $(ROOT)$(BACKUPFW_DIR)/restore.d/always)
-
 install-%-cud-scripts:
 	$(if $<, install -m755 -d $(ROOT)$(CUD_DIR))
 	$(if $<, install -m755 $^ $(ROOT)$(CUD_DIR))
@@ -317,7 +309,6 @@ camera-example1 : camera-example1.o libprofile$(SO)
 install-profiled-bin: profiled
 
 install-profiled-backup-config: osso-backup/profiled.conf
-install-profiled-backupfw-config: backupfw/profiled.conf
 
 install-profiled-cud-scripts: osso-cud-scripts/profiled.sh
 install-profiled-rfs-scripts: osso-rfs-scripts/profiled.sh
@@ -328,11 +319,7 @@ distclean:: ; $(RM) osso-backup/profiled.conf
 
 install-profiled-backup-restore:
 
-install-profiled-ini: ini/10.meego_default.ini
-	install -m755 -d $(ROOT)$(ETCDIR)/
-	install -m644 ini/10.meego_default.ini $(ROOT)$(ETCDIR)/10.meego_default.ini
-
-install-profiled:: $(addprefix install-profiled-, bin backup-config backupfw-config appkiller ini)
+install-profiled:: $(addprefix install-profiled-, bin backup-config appkiller)
 ifeq ($(USE_SYSTEM_BUS),y)
 	install -m755 -d $(ROOT)$(PREFIX)/share/dbus-1/system-services
 	install -m644 profiled.system.service \
