@@ -104,8 +104,6 @@ char const* const database_builtins[] =
 {
   "general",
   "silent",
-  "meeting",
-  "outdoors",
   0
 };
 
