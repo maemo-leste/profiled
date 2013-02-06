@@ -1,3 +1,11 @@
+profiled (0.30.2-1+0cssu1) fremantle; urgency=low
+
+  * Merge tag '0.30.2-1'
+  * Merge nemo git repository 'https://github.com/nemomobile/profiled'
+  * Fix linking with new glib by adding missing library to linking
+
+ -- Pali Rohár <pali.rohar@gmail.com>  Wed, 06 Feb 2013 22:09:01 +0100
+
 profiled (0.30.2-1) harmattan; urgency=low
 
   * Increasing version number
