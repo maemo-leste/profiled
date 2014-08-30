@@ -61,7 +61,7 @@ CPPFLAGS += -D_GNU_SOURCE
 
 CFLAGS   += -Wall
 CFLAGS   += -Wmissing-prototypes
-CFLAGS   += -Wunused-result
+#CFLAGS   += -Wunused-result
 CFLAGS   += -W
 CFLAGS   += -std=c99
 CFLAGS   += -Os
