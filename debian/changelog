@@ -1,3 +1,10 @@
+profiled (1.0.6) unstable; urgency=medium
+
+  * bump revision to 1.0.6
+  * enable git builds
+
+ -- Ivan J. <parazyd@dyne.org>  Wed, 13 Sep 2017 11:07:00 +0200
+
 profiled (1.0.4) nemomobile; urgency=low
 
   * [packaging] Remove old spectacle cruft. Fixes JB#27289
