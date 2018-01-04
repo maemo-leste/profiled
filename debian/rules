@@ -99,3 +99,5 @@ binary-arch: install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+build-arch: build
