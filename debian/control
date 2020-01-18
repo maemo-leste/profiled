@@ -22,30 +22,12 @@ Description: profile daemon, manages user settings
  Changes to values are broadcast as D-Bus signals so that
  active clients can be avare of changes without polling.
 
-Package: profiled-dbg
-Section: devel
-Priority: extra
-Architecture: any
-Depends: profiled (= ${binary:Version})
-Description: debug symbols for profiled
- This package contains debug information for profiled,
- useful for debugging tools like gdb.
-
 Package: profileclient
 Architecture: any
 Depends: ${shlibs:Depends}
 Description: command line test tool for profiled
  The profileclient tool can be used to query/change
  profiles and profile values.
-
-Package: profileclient-dbg
-Section: devel
-Priority: extra
-Architecture: any
-Depends: profileclient (= ${binary:Version})
-Description: debug symbols for profileclient
- This package contains debug information for XXX,
- useful for debugging tools like gdb.
 
 Package: libprofile0
 Section: libs
@@ -54,15 +36,6 @@ Depends: ${shlibs:Depends}, profiled (>= ${binary:Version})
 Description: client library for communicating with profiled
  Dynamic library implementing the API use for accessing
  profile data managed by the profile daemon.
-
-Package: libprofile0-dbg
-Section: libdevel
-Priority: extra
-Architecture: any
-Depends: libprofile0 (= ${binary:Version})
-Description: debug symbols for libprofile0
- This package contains debug information for libprofile0,
- useful for debugging tools like gdb.
 
 Package: libprofile-dev
 Section: libdevel
